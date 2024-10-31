@@ -4,16 +4,17 @@
 
 using namespace std;
 
-void Swap(int *a, int *b) 
+template<typename T> 
+void Swap(T& a,T& b) 
 {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
+	int temp = a;
+	a = b;
+	b = temp;
 }
 void FillArray(int *arr, const int size) 
 {
 	for (int i = 0; i < size; i++) {
-		arr[i] = rand() % 12;
+		arr[i] = rand() % 5000;
 	}
 }
 void ShowArray(int* arr, const int size)
@@ -24,7 +25,7 @@ void ShowArray(int* arr, const int size)
 }
 void BubbleSort(int* arr, const int size) {
 	for (int i = 0; i < size; i++) {
-		for (int j = i; j < size-1; j++) {
+		for (int j = 0; j < size-1; j++) {
 			if (arr[j] > arr[j + 1]) {
 				int temp = arr[j];
 				arr[j] = arr[j + 1];
@@ -36,11 +37,12 @@ void BubbleSort(int* arr, const int size) {
 
 
 int main() {
-	const int size=10;
+	const int size=15;
 	int arr[size];
 	FillArray(arr, size);
 	ShowArray(arr, size);
 	cout << "=========================" << endl;
 	BubbleSort(arr, size);
 	ShowArray(arr, size);
+	cout << "=========================" << endl;
 }
