@@ -4,12 +4,12 @@
 
 using namespace std;
 
-template<typename T> 
-void Swap(T& a,T& b) 
+ 
+void Swap(int *a,int *b) 
 {
-	int temp = a;
-	a = b;
-	b = temp;
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
 void FillArray(int *arr, const int size) 
 {
@@ -17,32 +17,35 @@ void FillArray(int *arr, const int size)
 		arr[i] = rand() % 5000;
 	}
 }
-void ShowArray(int* arr, const int size)
+void PrintArray(int *arr, const int size)
 {
 	for (int i = 0; i < size; i++) {
 		cout << arr[i] << endl;
 	}
 }
-void BubbleSort(int* arr, const int size) {
+void BubbleSort(int *arr, const int size) {
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size-1; j++) {
 			if (arr[j] > arr[j + 1]) {
-				int temp = arr[j];
+				/*int temp = arr[j];
 				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
+				arr[j + 1] = temp;*/
+				Swap(&arr[j], &arr[j+1]);
 			}
 		}
 	}
 }
 
 
+
 int main() {
-	const int size=15;
+	srand(time(NULL));
+	const int size=20;
 	int arr[size];
 	FillArray(arr, size);
-	ShowArray(arr, size);
+	PrintArray(arr, size);
 	cout << "=========================" << endl;
 	BubbleSort(arr, size);
-	ShowArray(arr, size);
+	PrintArray(arr, size);
 	cout << "=========================" << endl;
 }
