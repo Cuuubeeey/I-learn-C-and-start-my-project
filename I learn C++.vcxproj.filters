@@ -27,5 +27,8 @@
     <ClCompile Include="ManyDumensionsDynamicArr.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="CopyDynArr.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Array.cpp" />
+    <ClCompile Include="CopyDynArr.cpp" />
     <ClCompile Include="DynamicArray.cpp" />
     <ClCompile Include="ManyDumensionsDynamicArr.cpp" />
     <ClCompile Include="Recursion.cpp" />
